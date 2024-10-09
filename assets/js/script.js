@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
         })
     }
+    //the below code listens for a keydown, the Enter key and checks the Answer- also aids user experience
+    document.getElementById("answer-box").addEventListener("keydown", function(event){
+        if (event.key === "Enter"){
+            checkAnswer();
+        }
+    })
 
     runGame("addition");
 })
@@ -23,6 +29,12 @@ document.addEventListener("DOMContentLoaded", function(){
  *and  after the user's answer has been processed
  */
 function runGame(gameType) {
+
+    //empty out the answer box for better user experience & usability
+    document.getElementById("answer-box").value = "";
+
+    //setting the focus: let us keep the cursor at the answer box rather than have the user click on it again
+    document.getElementById("answer-box").focus(); //to keep the cursor in place for the user
 
     //creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random()*25)+1;
