@@ -143,5 +143,7 @@ function displayMultipleQuestion(operand1, operand2){
 }
 
 function displayDivideQuestion(){
-
+/**
+ *  Remember, you can easily make sure the first operand is divisible by the second operand by multiplying your two random numbers and using the result as operand1
+ */
 }
