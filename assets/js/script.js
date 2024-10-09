@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
 function runGame(gameType) {
 
     //creates two random numbers between 1 and 25
-    let num1 = Math.floor(Math.random()*25) +1;
+    let num1 = Math.floor(Math.random()*25)+1;
     let num2 = Math.floor(Math.random()*25)+1;
 
     if (gameType === "addition"){
@@ -37,8 +37,23 @@ function runGame(gameType) {
     
 
 }
-
+/**
+*Checks the answer against the first element in
+* the reurned calculateCorrectAnswer array
+*/
 function checkAnswer(){
+
+    let userAnswer = parseInt(document.getElementById("answer-box").value);
+    let calculatedAnswer = calcCorrectAns();
+    let isCorrect = userAnswer === calculatedAnswer[0];
+
+    if(isCorrect){
+        alert('Hey, you got it right :D')
+    } else{
+        alert(`Aww.. you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
+    }
+
+    runGame(calculatedAnswer[1]);
 
 }
 /**
